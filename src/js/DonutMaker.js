@@ -6,7 +6,7 @@ class DonutMaker {
         this.autoClickerCost = 100;
         this.donutMultiplier = 1;
         this.donutMultiplierCount = 0;
-        this.donutMultiplerCost = 10;
+        this.donutMultiplerCost = 1000;
     }
 
     addClicker() {
@@ -17,15 +17,18 @@ class DonutMaker {
     }
 
     addDonutMultiplier() {
+        this.clickCount -= this.donutMultiplerCost;
         this.donutMultiplierCount++;
         this.donutMultiplerCost *= 1.1;
         this.donutMultiplerCost = parseInt(this.donutMultiplerCost);
         this.donutMultiplier = Math.pow(1.2, this.donutMultiplierCount);
+        
     }
 
 
     recordClick() {
-        this.clickCount++;
+        let donutsToAdd = 1 * this.donutMultiplier;
+        this.clickCount += donutsToAdd;
     }
 
     activateClickers() {
