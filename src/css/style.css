@@ -22,27 +22,39 @@ body {
     
 }
 
-.donut__clicking {
-    align-self: center;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
 
 .container {
-    height: 100vh;
+    
+  
     display: flex;
-    justify-content: center;
-}
-
-.donut__count {
-    text-align: center;
+    
 }
 
 .auto__clickers {
+    /* justify-self: stretch; */
+    /* flex-grow: 1;*/
     justify-self: flex-start;
+    /* flex:1 */
+}
+
+.donut__clicking {
+    
+    justify-content: center;
+    text-align: center;
+    flex:1
 }
 
 .donut__multiplier {
-    justify-content: flex-end;
+    /* justify-self: stretch; */
+    /* flex-shrink: 0; */
+    justify-self: flex-end;
+    text-align: right;
+    flex:1
 }
+.donut__count {
+    /* text-align: ; */
+    /* flex-grow:2; */
+    
+}
+
