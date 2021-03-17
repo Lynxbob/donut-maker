@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url(/src/images/background-3.jpg);
+    color: rgb(255, 255, 255);
+}
+
+#donut__clicker:hover {
+    transform: scale(1.1);
+    transition: transform .2s;
+    cursor:pointer;
+}
+
+#donut__clicker:active {
+    transform: scale(.9);
+    transition: transform .2s;
+}
+
+#donut__clicker {
+    transform: scale(1.0);
+    transition: transform .2s;
+    
+}
+
+.donut__clicking {
+    align-self: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.donut__count {
+    text-align: center;
+}
+
+.auto__clickers {
+    justify-self: flex-start;
+}
+
+.donut__multiplier {
+    justify-content: flex-end;
+}

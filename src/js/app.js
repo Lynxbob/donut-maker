@@ -8,17 +8,17 @@ const buyMultiplier = document.querySelector("#buy__multiplier");
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
-  }
+}
 
 async function useAutoClickers() {
     dMaker.activateClickers();
     updateCounters();
-    await sleep(1000);
+    await sleep(100);
     useAutoClickers();
 }
 
 buyMultiplier.onclick = function buyMultiply() {
-    if(dMaker.clickCount >= dMaker.donutMultiplerCost) {
+    if(dMaker.clickCount >= dMaker.donutMultiplierCost) {
         dMaker.addDonutMultiplier();
         updateCounters();
     }
@@ -45,7 +45,7 @@ function updateCounters() {
     const autoClickerPrice = document.querySelector(".autoclicker__price");
     autoClickerPrice.innerHTML = `Autoclicker price: ${dMaker.autoClickerCost} donuts`;
     const donutMultiplerPrice = document.querySelector(".multiplier__price");
-    donutMultiplerPrice.innerHTML = `Donut multiplier price: ${dMaker.donutMultiplerCost} donuts`;
+    donutMultiplerPrice.innerHTML = `Donut multiplier price: ${dMaker.donutMultiplierCost} donuts`;
     const currentMultiplier = document.querySelector(".current__multiplier");
     currentMultiplier.innerHTML = `Current Multiplier: ${dMaker.donutMultiplier.toFixed(3)}`;
 
