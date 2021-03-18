@@ -38,6 +38,16 @@ class DonutMaker {
         this.clickCount += (this.autoClickers * this.donutMultiplier)/10;
     }
 
+    resetGame() {
+        this.clickCount = 0;
+        this.autoClickers = 0;
+        this.autoClickerCost = 100;
+        this.donutMultiplier = 1;
+        this.donutMultiplierCount = 0;
+        this.donutMultiplierCost = 1000;
+        this.donutsPerSecond = 0;
+    }
+
 
 
 }

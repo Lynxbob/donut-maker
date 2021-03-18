@@ -4,6 +4,7 @@ const dMaker = new DonutMaker();
 const clickDonut = document.querySelector("#donut__clicker");
 const buyAutoClicker = document.querySelector("#buy__autoclicker");
 const buyMultiplier = document.querySelector("#buy__multiplier");
+let container = document.querySelector(".container");
 
 
 function sleep(ms) {
