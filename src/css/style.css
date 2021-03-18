@@ -43,19 +43,26 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-content: center;
-
     
 }
 
 
 .main__section {
+    margin-top: 5rem;
+    width: 100vw;
     display: flex;
     justify-content: center;
+    align-self:center;
 }
 
 .donut__count {
     text-align: center;
+}
+
+.header__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .auto__clickers {
@@ -88,4 +95,18 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.dropdown {
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    width: 40%;
+    height:12rem;
+    align-self: center;
+    background-color: black;
+}
+.header {
+    background-color: black;
+   
 }
