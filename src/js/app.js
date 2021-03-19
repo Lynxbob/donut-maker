@@ -5,6 +5,71 @@ const clickDonut = document.querySelector("#donut__clicker");
 const buyAutoClicker = document.querySelector("#buy__autoclicker");
 const buyMultiplier = document.querySelector("#buy__multiplier");
 let container = document.querySelector(".container");
+const about = document.querySelector(".about");
+const inspiration = document.querySelector(".inspiration");
+const contactInfo = document.querySelector(".contact__info");
+let dropdown = document.querySelector(".dropdown");
+let dropdownInfo = document.querySelector(".info");
+let header = document.querySelector(".header");
+dropdown.mouseOver = false;
+
+
+
+header.addEventListener("mouseout", () => {
+    if(!dropdown.mouseOver) {
+        dropdown.style.visibility = "hidden";
+    }
+});
+
+header.addEventListener("mouseover", () => {
+    dropdown.style.visibility = "visible";
+
+});
+
+
+contactInfo.addEventListener("mouseover", () => {
+    dropdown.style.visibility = "visible";
+    dropdownInfo.innerHTML = `Thank you for playing my game!
+    <ul class = "contact__list">
+    <li>Branden Webb</li>
+    <li><a href="https://www.linkedin.com/in/branden-webb-29b616207/">My Linkedin</a></li>
+    <li><a href="https://lynxbob.github.io/">My Portfolio</a></li>
+    <li>brandenswebb@hotmail.com</li>
+    </ul>`
+
+});
+
+about.addEventListener("mouseover", () => {
+    dropdown.style.visibility = "visible";
+    dropdownInfo.innerHTML = `Welcome to Fred the Baker Baking Company's donut Maker! This is a video game where you try to make as many donuts as possible
+    by clicking on the donut and purchasing upgrades. Have fun!`
+
+});
+
+dropdown.addEventListener("mouseover", () => {
+    dropdown.mouseOver = true;
+    dropdown.style.visibility = "visible";
+});
+
+dropdown.addEventListener("mouseout", () => {
+    dropdown.mouseOver = false;
+    dropdown.style.visibility = "hidden";
+});
+
+
+
+
+inspiration.addEventListener("mouseover", () => {
+    inspiration.mouseOver = true;
+    dropdown.style.visibility = "visible";
+    let anchor = document.createElement("a");
+    anchor.href = "https://orteil.dashnet.org/cookieclicker/"
+    anchor.innerHTML = "here is the link to that game."
+    dropdownInfo.innerHTML = `The inspiration of this game comes from the famous game cookie clicker, and it's creator Orteil. if you want to check that out, ` ;
+    dropdownInfo.appendChild(anchor);
+
+});
+
 
 
 function sleep(ms) {
@@ -51,5 +116,6 @@ function updateCounters() {
     currentMultiplier.innerHTML = `Current Multiplier: ${dMaker.donutMultiplier.toFixed(3)}`;
 
 }
+
 
 useAutoClickers();

@@ -105,8 +105,13 @@ body {
     height:12rem;
     align-self: center;
     background-color: black;
+    padding: 1rem;
 }
 .header {
     background-color: black;
    
+}
+
+.contact__list {
+    list-style-type: none;
 }
