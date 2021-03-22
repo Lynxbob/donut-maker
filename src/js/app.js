@@ -78,6 +78,22 @@ inspiration.addEventListener("mouseover", () => {
 
 });
 
+async function checkButtonsForDisable() {
+    if(dMaker.autoClickerCost > dMaker.clickCount) {
+        buyAutoClicker.disabled = true;
+    } else {
+        buyAutoClicker.disabled = false;
+    }
+
+    if(dMaker.donutMultiplierCost > dMaker.clickCount) {
+        buyMultiplier.disabled = true;
+    } else {
+        buyMultiplier.disabled = false;
+    }
+    await sleep(100);
+    checkButtonsForDisable();
+}
+
 
 
 function sleep(ms) {
@@ -129,3 +145,4 @@ function updateCounters() {
 
 
 useAutoClickers();
+checkButtonsForDisable();
