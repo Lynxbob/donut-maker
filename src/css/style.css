@@ -114,4 +114,13 @@ body {
 
 .contact__list {
     list-style-type: none;
+    padding: 0;
+}
+
+.donuts__per__second {
+    text-align: center;
+}
+
+.reset {
+    margin: 2rem;
 }

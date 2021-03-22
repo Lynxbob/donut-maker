@@ -1,4 +1,4 @@
-const dMaker = new DonutMaker();
+let dMaker = new DonutMaker();
 
 
 const clickDonut = document.querySelector("#donut__clicker");
@@ -11,15 +11,20 @@ const contactInfo = document.querySelector(".contact__info");
 let dropdown = document.querySelector(".dropdown");
 let dropdownInfo = document.querySelector(".info");
 let header = document.querySelector(".header");
+let reset = document.querySelector(".reset");
 dropdown.mouseOver = false;
 
 
+reset.onclick = function reset() {
+    dMaker = new DonutMaker();
+}
 
 header.addEventListener("mouseout", () => {
     if(!dropdown.mouseOver) {
         dropdown.style.visibility = "hidden";
     }
 });
+
 
 header.addEventListener("mouseover", () => {
     dropdown.style.visibility = "visible";
@@ -35,7 +40,8 @@ contactInfo.addEventListener("mouseover", () => {
     <li><a href="https://www.linkedin.com/in/branden-webb-29b616207/">My Linkedin</a></li>
     <li><a href="https://lynxbob.github.io/">My Portfolio</a></li>
     <li>brandenswebb@hotmail.com</li>
-    </ul>`
+    </ul>`;
+    dropdown.style.textAlign = "center";
 
 });
 
@@ -43,6 +49,7 @@ about.addEventListener("mouseover", () => {
     dropdown.style.visibility = "visible";
     dropdownInfo.innerHTML = `Welcome to Fred the Baker Baking Company's donut Maker! This is a video game where you try to make as many donuts as possible
     by clicking on the donut and purchasing upgrades. Have fun!`
+    dropdown.style.textAlign = "left";
 
 });
 
@@ -67,6 +74,7 @@ inspiration.addEventListener("mouseover", () => {
     anchor.innerHTML = "here is the link to that game."
     dropdownInfo.innerHTML = `The inspiration of this game comes from the famous game cookie clicker, and it's creator Orteil. if you want to check that out, ` ;
     dropdownInfo.appendChild(anchor);
+    dropdown.style.textAlign = "left";
 
 });
 
@@ -107,13 +115,15 @@ function updateCounters() {
     const donutCount = document.querySelector(".donut__count");
     donutCount.innerHTML = `Donut Count: ${dMaker.clickCount.toFixed(3)}`;
     const autoClickerCount = document.querySelector(".autoclicker__count");
-    autoClickerCount.innerHTML = `AutoClicker Count: ${dMaker.autoClickers}`;
+    autoClickerCount.innerHTML = `Autoclicker Count: ${dMaker.autoClickers}`;
     const autoClickerPrice = document.querySelector(".autoclicker__price");
     autoClickerPrice.innerHTML = `Autoclicker price: ${dMaker.autoClickerCost} donuts`;
     const donutMultiplerPrice = document.querySelector(".multiplier__price");
     donutMultiplerPrice.innerHTML = `Donut multiplier price: ${dMaker.donutMultiplierCost} donuts`;
     const currentMultiplier = document.querySelector(".current__multiplier");
     currentMultiplier.innerHTML = `Current Multiplier: ${dMaker.donutMultiplier.toFixed(3)}`;
+    const dps = document.querySelector(".donuts__per__second");
+    dps.innerHTML = `Donuts per second: ${dMaker.donutsPerSecond.toFixed(3)}`;
 
 }
 
